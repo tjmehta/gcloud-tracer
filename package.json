@@ -1,5 +1,5 @@
 {
-  "name": "gcloud-trace",
+  "name": "gcloud-tracer",
   "version": "0.0.0",
   "description": "Custom Google Cloud StackDriver tracing client w/out using CLS",
   "main": "index.js",
