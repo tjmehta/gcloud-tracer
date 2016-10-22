@@ -1,0 +1,57 @@
+{
+  "name": "gcloud-trace",
+  "version": "0.0.0",
+  "description": "Custom Google Cloud StackDriver tracing client w/out using CLS",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tjmehta/gcloud-trace.git"
+  },
+  "scripts": {
+    "test": "mocha test",
+    "test-cov": "istanbul cover _mocha ./test && istanbul --text check-coverage --statements 100 --functions 100 --branches 100 --lines 100",
+    "test-watch": "nodemon -x mocha ./test",
+    "lint": "standard"
+  },
+  "keywords": [
+    "google",
+    "cloud",
+    "stackdriver",
+    "trace",
+    "client",
+    "api",
+    "custom",
+    "gcloud",
+    "tracing"
+  ],
+  "author": "Tejesh Mehta",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/tjmehta/gcloud-trace/issues"
+  },
+  "homepage": "https://github.com/tjmehta/gcloud-trace#readme",
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "istanbul": "^0.4.5",
+    "jest": "^16.0.1",
+    "mocha": "^3.1.0",
+    "proxyquire": "^1.7.10",
+    "shimmer": "^1.1.0",
+    "sinon": "^1.17.6",
+    "standard": "^8.3.0",
+    "supertest": "^2.0.1"
+  },
+  "standard": {
+    "globals": [
+      "afterEach",
+      "beforeEach",
+      "describe",
+      "expect",
+      "it",
+      "jest"
+    ]
+  },
+  "dependencies": {
+    "@google/cloud-trace": "^0.5.8"
+  }
+}
