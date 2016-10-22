@@ -48,7 +48,7 @@ const spanData = trace.createRootSpanData(spanName, {
 // spanName will be the url path
 // parent span info (traceId and parentSpanId) are extracted from req.headers[trace.HEADER_NAME]
 // request info labels are automatically added to the span
-const spanData = trace.createReqRootSpanData(req, {
+const spanData = trace.createReqRootSpanData(req, res, {
   // optional options:
   // remove frames from stack trace for span
   // like if you wrap this library w/ your own helper/util
@@ -99,7 +99,7 @@ const trace = require('gcloud-trace')
 trace.start()
 
 http.createServer(function (req, res) {
-  const rootSpan = trace.createReqRootSpanData(req)
+  const rootSpan = trace.createReqRootSpanData(req, res)
   const timeoutSpan = rootSpan.createChildSpanData('timeout')
   setTimeout(function () {
     timeoutSpan.end() // not required, will auto end with root span..

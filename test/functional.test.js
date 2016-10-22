@@ -27,7 +27,7 @@ describe('functional tests', function () {
       const self = this
       const server = http.createServer(function (req, res) {
         try {
-          const rootSpan = self.rootSpanData = createRootSpanDataForReq(req)
+          const rootSpan = self.rootSpanData = createRootSpanDataForReq(req, res)
           // async thing..
           process.nextTick(function () {
             try {
