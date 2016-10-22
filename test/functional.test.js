@@ -46,12 +46,7 @@ describe('functional tests', function () {
               res.end()
             } catch (err) { done(err) }
           })
-        } catch (err) {
-          // respond err status
-          res.writeHead(500)
-          res.end()
-          done(err)
-        }
+        } catch (err) { done(err) }
       })
       request(server)
         .get('/')

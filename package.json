@@ -52,6 +52,7 @@
     ]
   },
   "dependencies": {
+    "101": "^1.6.2",
     "@google/cloud-trace": "^0.5.8"
   }
 }
