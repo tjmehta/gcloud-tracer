@@ -1,6 +1,7 @@
 'use strict'
 
 const constants = require('@google/cloud-trace/lib/constants.js')
+const TraceLabels = require('@google/cloud-trace/lib/trace-labels.js')
 
 const agent = require('./lib/agent.js')
 const extendSpanData = require('./lib/extend-span-data.js')
@@ -14,5 +15,7 @@ module.exports = {
   },
   createRootSpanDataForReq: createRootSpanDataForReq,
   createRootSpanData: createRootSpanData,
-  HEADER_NAME: constants.TRACE_CONTEXT_HEADER_NAME
+  HEADER_NAME: constants.TRACE_CONTEXT_HEADER_NAME,
+  constants: constants,
+  TraceLabels: TraceLabels
 }
