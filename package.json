@@ -33,7 +33,7 @@
   "devDependencies": {
     "chai": "^3.5.0",
     "istanbul": "^0.4.5",
-    "jest": "^16.0.1",
+    "jest": "^18.1.0",
     "mocha": "^3.1.0",
     "proxyquire": "^1.7.10",
     "shimmer": "^1.1.0",
@@ -53,8 +53,8 @@
   },
   "dependencies": {
     "101": "^1.6.2",
-    "@google/cloud-diagnostics-common": "0.2.5",
-    "@google/cloud-trace": "0.5.8",
+    "@google/cloud-diagnostics-common": "0.3.0",
+    "@google/cloud-trace": "0.5.10",
     "shimmer": "^1.1.0"
   }
 }
