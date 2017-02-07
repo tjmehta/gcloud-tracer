@@ -54,7 +54,7 @@
   "dependencies": {
     "101": "^1.6.2",
     "@google/cloud-diagnostics-common": "0.3.0",
-    "@google/cloud-trace": "0.5.10",
+    "@google/cloud-trace": "0.6.2",
     "shimmer": "^1.1.0"
   }
 }
