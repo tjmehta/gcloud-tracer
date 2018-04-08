@@ -31,7 +31,7 @@
   },
   "homepage": "https://github.com/tjmehta/gcloud-trace#readme",
   "devDependencies": {
-    "chai": "^3.5.0",
+    "chai": "^4.0.0",
     "istanbul": "^0.4.5",
     "jest": "^18.1.0",
     "mocha": "^4.0.0",
