@@ -52,7 +52,7 @@
   },
   "dependencies": {
     "101": "^1.6.2",
-    "@google-cloud/trace-agent": "github:tjmehta/cloud-trace-nodejs#616e352",
+    "@google-cloud/trace-agent": "github:tjmehta/cloud-trace-nodejs#6f13e75",
     "shimmer": "^1.1.0"
   }
 }
