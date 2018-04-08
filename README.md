@@ -28,17 +28,16 @@ trace.init(opts)
 
 const spanName = 'root trace span'
 const spanData = trace.createRootSpanData(spanName, {
-  // optional options:
+  // traceId & parentSpanId -OR- traceHeader is required
   // parent trace span info
   traceId: 'continuingFromAnotherService',
   parentSpanId: 'continuingFromAnotherService',
-  // or traceHeader - spanData.toHeader() will return a traceHeader string to trace across services
+  // traceHeader - spanData.toHeader() will return a traceHeader string to trace across services
   traceHeader: 'traceId/parentSpanId;o=1',
+  // optional options:
   // remove frames from stack trace for span
   // like if you wrap this library w/ your own helper/util
-  skipFrames: 1,
-  // span kind: RPC_SERVER or RPC_CLIENT
-  spanKind: 'RPC_SERVER'
+  skipFrames: 1
 })
 // ... see span data usage below
 ```
@@ -52,9 +51,7 @@ const spanData = trace.createReqRootSpanData(req, res, {
   // optional options:
   // remove frames from stack trace for span
   // like if you wrap this library w/ your own helper/util
-  skipFrames: 1,
-  // span kind: RPC_SERVER or RPC_CLIENT
-  spanKind: 'RPC_SERVER'
+  skipFrames: 1
 })
 // ... see span data usage below
 ```

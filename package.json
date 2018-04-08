@@ -1,7 +1,7 @@
 {
   "name": "gcloud-tracer",
   "version": "2.0.0",
-  "description": "Custom Google Cloud StackDriver tracing client w/out using CLS",
+  "description": "Custom Google Cloud StackDriver tracing client w/out monkey patching",
   "main": "index.js",
   "repository": {
     "type": "git",
@@ -22,7 +22,10 @@
     "api",
     "custom",
     "gcloud",
-    "tracing"
+    "tracing",
+    "monkey patching",
+    "cls",
+    "plugins"
   ],
   "author": "Tejesh Mehta",
   "license": "MIT",
@@ -33,10 +36,7 @@
   "devDependencies": {
     "chai": "^4.0.0",
     "istanbul": "^0.4.5",
-    "jest": "^18.1.0",
     "mocha": "^4.0.0",
-    "proxyquire": "^1.7.10",
-    "shimmer": "^1.1.0",
     "sinon": "^2.0.0",
     "standard": "^9.0.2",
     "supertest": "^2.0.1"
@@ -47,14 +47,12 @@
       "beforeEach",
       "describe",
       "expect",
-      "it",
-      "jest"
+      "it"
     ]
   },
   "dependencies": {
     "101": "^1.6.2",
-    "@google/cloud-diagnostics-common": "0.3.0",
-    "@google/cloud-trace": "0.5.10",
+    "@google-cloud/trace-agent": "github:tjmehta/cloud-trace-nodejs#ae9eb59",
     "shimmer": "^1.1.0"
   }
 }
