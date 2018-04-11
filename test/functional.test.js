@@ -5,9 +5,10 @@ const http = require('http')
 const expect = require('chai').expect
 const request = require('supertest')
 const sinon = require('sinon')
-const TraceWriter = require('@google/cloud-trace/lib/trace-writer')
+const TraceWriter = require('@google-cloud/trace-agent/build/src/trace-writer').TraceWriter
 
 const trace = require('../')
+const rootSpanDatasById = require('../lib/root-span-datas-by-id')
 const createRootSpanDataForReq = trace.createRootSpanDataForReq
 // required env
 process.env.GCLOUD_PROJECT = 'test'
@@ -54,11 +55,12 @@ describe('functional tests', function () {
         .end(function (err) {
           if (err) { return done(err) }
           sinon.assert.calledOnce(TraceWriter.prototype.writeSpan)
-          sinon.assert.calledWith(TraceWriter.prototype.writeSpan, self.rootSpanData)
+          sinon.assert.calledWith(TraceWriter.prototype.writeSpan, self.rootSpanData.trace)
           expect(self.rootSpanData.trace.spans).to.deep.equal([
             self.rootSpanData.span,
             self.childSpanData.span
           ])
+          expect(Object.keys(rootSpanDatasById).length).to.equal(0)
           done()
         })
     })

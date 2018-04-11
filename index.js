@@ -1,21 +1,21 @@
-'use strict'
-process.addAsyncListener = true // this module doesnt need cls, so stop cls from using async-listener..
-const constants = require('@google/cloud-trace/lib/constants.js')
-const TraceLabels = require('@google/cloud-trace/lib/trace-labels.js')
+const gcloudTraceAgent = require('@google-cloud/trace-agent')
 
-const agent = require('./lib/agent.js')
-const extendSpanData = require('./lib/extend-span-data.js')
-const createRootSpanDataForReq = require('./lib/req-root-span-data-factory.js')
-const createRootSpanData = require('./lib/root-span-data-factory.js')
-process.addAsyncListener = null // this module doesnt need cls, so stop cls from using async-listener..
-module.exports = {
-  init: function (opts) {
-    agent.start(opts)
-    extendSpanData()
-  },
-  createRootSpanDataForReq: createRootSpanDataForReq,
-  createRootSpanData: createRootSpanData,
-  HEADER_NAME: constants.TRACE_CONTEXT_HEADER_NAME,
-  constants: constants,
-  TraceLabels: TraceLabels
+const createRootSpanData = require('./lib/create-root-span-data')
+const createRootSpanDataForReq = require('./lib/create-root-span-data-for-req')
+
+class GcloudTracer {
+  init (config) {
+    gcloudTraceAgent.start(config)
+  }
+  stop () {
+    gcloudTraceAgent.stop()
+  }
+  createRootSpanDataForReq (req, res, opts) {
+    return createRootSpanDataForReq(req, res, opts)
+  }
+  createRootSpanData (name, opts) {
+    return createRootSpanData(name, opts)
+  }
 }
+
+module.exports = new GcloudTracer()
