@@ -8,7 +8,6 @@ const sinon = require('sinon')
 const TraceWriter = require('@google-cloud/trace-agent/build/src/trace-writer').TraceWriter
 
 const trace = require('../')
-const rootSpanDatasById = require('../lib/root-span-datas-by-id')
 const createRootSpanDataForReq = trace.createRootSpanDataForReq
 // required env
 process.env.GCLOUD_PROJECT = 'test'
@@ -60,7 +59,7 @@ describe('functional tests', function () {
             self.rootSpanData.span,
             self.childSpanData.span
           ])
-          expect(Object.keys(rootSpanDatasById).length).to.equal(0)
+          console.log(self.rootSpanData.trace.spans)
           done()
         })
     })
