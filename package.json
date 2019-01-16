@@ -39,7 +39,7 @@
     "shimmer": "^1.1.0",
     "sinon": "^2.0.0",
     "standard": "^9.0.2",
-    "supertest": "^2.0.1"
+    "supertest": "^3.4.1"
   },
   "standard": {
     "globals": [
