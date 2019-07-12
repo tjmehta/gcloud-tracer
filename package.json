@@ -35,7 +35,7 @@
     "istanbul": "^0.4.5",
     "jest": "^18.1.0",
     "mocha": "^5.1.0",
-    "proxyquire": "^1.7.10",
+    "proxyquire": "^2.1.1",
     "shimmer": "^1.1.0",
     "sinon": "^2.0.0",
     "standard": "^9.0.2",
