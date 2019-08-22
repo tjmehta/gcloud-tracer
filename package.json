@@ -38,7 +38,7 @@
     "proxyquire": "^1.7.10",
     "shimmer": "^1.1.0",
     "sinon": "^2.0.0",
-    "standard": "^9.0.2",
+    "standard": "^14.0.2",
     "supertest": "^2.0.1"
   },
   "standard": {
